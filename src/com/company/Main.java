@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.entities.Driver;
 import com.company.entities.Truck;
 import com.company.service.ServiceImpl;
 import com.google.gson.Gson;
@@ -27,6 +28,13 @@ public class Main {
                 #   | Bus              |  Driver   |  State
                 ————|——————————————————|———————————|—————————>""");
         for (Truck s : srv.getTrucks()) {
+            System.out.println(s);
+        }
+        System.out.println();
+        System.out.println("""
+                #   | Driver           | Bus
+                ————|——————————————————|——————————>""");
+        for (Driver s : srv.getDrivers()) {
             System.out.println(s);
         }
     }
