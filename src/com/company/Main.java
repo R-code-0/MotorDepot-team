@@ -7,9 +7,11 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class Main {
 
@@ -37,6 +39,7 @@ public class Main {
         for (Driver s : srv.getDrivers()) {
             System.out.println(s);
         }
+        srv.changeTruckState();
     }
 
 
@@ -47,6 +50,23 @@ public class Main {
    public static String readDriver() {
        return getString(WRITE_PATH1);
    }
+    public static void writeTruck(List<Truck> truck) {
+        try (FileWriter file = new FileWriter(WRITE_PATH.toString())) {
+            file.write(GSON.toJson(truck));
+            file.flush();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void writeDriver(List<Driver> driver) {
+        try (FileWriter file = new FileWriter(WRITE_PATH1.toString())) {
+            file.write(GSON.toJson(driver));
+            file.flush();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     private static String getString(Path writePath1) {
         StringBuilder json = new StringBuilder();
