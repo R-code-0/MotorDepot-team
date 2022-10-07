@@ -59,7 +59,7 @@ public class ServiceImpl implements Service {
                 if (trucks.get(truckId - 1).getDriver().length() > 1) {
                     trucks.get(truckId - 1).setState(State.ROUTE);
                     trucks.set(truckId - 1, trucks.get(truckId - 1));
-                    System.out.println("Успешно вышли на маршрут <" + trucks.get(truckId - 1) + ">");
+                    System.out.println("Успешно вышли на маршрут <" + trucks.get(truckId - 1).getTruckName() + ">");
                 } else System.out.println("Нет водителя");
             }
             case 1 -> System.out.println("Грузовик уже в пути");
