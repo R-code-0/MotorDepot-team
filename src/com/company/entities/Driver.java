@@ -15,6 +15,8 @@ public class Driver {
 
     @Override
     public String toString() {
-        return idDiver + "  |" + name + "             |" + truckName;
+        int y = 16 - name.length();
+        int z = 3 - (idDiver+"").length();
+        return idDiver + " ".repeat(z) +  " | " + name + " ".repeat(y) + " | " + truckName;
     }
 }
