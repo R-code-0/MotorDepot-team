@@ -3,9 +3,32 @@ package com.company.entities;
 public class Truck {
     private final int id;
     private final String truckName;
-    private final String driver;
-    private final State State;
+    private String driver;
+    private State State;
 
+    public int getId() {
+        return id;
+    }
+
+    public String getTruckName() {
+        return truckName;
+    }
+
+    public String getDriver() {
+        return driver;
+    }
+
+    public void setDriver(String driver) {
+        this.driver = driver;
+    }
+
+    public com.company.entities.State getState() {
+        return State;
+    }
+
+    public void setState(com.company.entities.State state) {
+        State = state;
+    }
 
     public Truck(int id, String truckName, String driver, State State) {
         this.id = id;
@@ -23,10 +46,3 @@ public class Truck {
         return id + " ".repeat(z >= 0 ? z : 1) + " | " + truckName + " ".repeat(x) + " | " + driver + " ".repeat(y) + " | " + State;
     }
 }
-
-enum State {
-    BASE, ROUTE, REPAIR
-
-
-}
-
