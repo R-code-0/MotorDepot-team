@@ -3,9 +3,9 @@ package com.company.entities;
 
 
 public class Driver {
-    private int idDiver;
-    private String name;
-    private String truckName;
+    private final int idDiver;
+    private final String name;
+    private final String truckName;
 
     public Driver(int idDiver, String name, String truckName) {
         this.idDiver = idDiver;

@@ -10,7 +10,7 @@ import java.util.List;
 import static com.company.Main.*;
 
 public class ServiceImpl implements Service{
-    List<Truck> trucks = new ArrayList<>(List.of(GSON.fromJson(readTtuck(), Truck[].class)));
+    List<Truck> trucks = new ArrayList<>(List.of(GSON.fromJson(readTruck(), Truck[].class)));
     List<Driver> drivers = new ArrayList<>(List.of(GSON.fromJson(readDriver(),Driver[].class)));
 
 
